@@ -1,17 +1,78 @@
 // Get UI Elements
 const sketchbook =  document.getElementById('sketchbook');
+const pixels256 = document.getElementById('256px');
+const pixels1024 = document.getElementById('1024px');
+const pixels2916 = document.getElementById('2916px');
+const pixels4900 = document.getElementById('4900px');
+const $color = document.querySelector('input');
+const $clearBtn = document.querySelector('.clear-btn');
 
 // Declare variables
-let pixels, numPixels;
-const div = '<div></div>';
+let pixels, numPixels, colorPaint;
 let isDrawing = false;
 
-numPixels = 1024;
 
 // Add event listeners
+$clearBtn.addEventListener('click', clearCanvas);
+
+$color.addEventListener('click', (e) => {
+    console.log(e.target.value)
+})
+
+pixels256.addEventListener('click', (e) => {
+    clearPixels()
+    numPixels = 256;
+    displayPixels();
+    document.querySelectorAll('.btn').forEach(btn => {
+        if (btn.classList.contains('current-color')) {
+            btn.classList.remove('current-color')
+        }
+    })
+
+    e.target.classList.add('current-color');
+})
+
+
+pixels1024.addEventListener('click', (e) => {
+    clearPixels()
+    numPixels = 1024;
+    displayPixels();
+    document.querySelectorAll('.btn').forEach(btn => {
+        if (btn.classList.contains('current-color')) {
+            btn.classList.remove('current-color')
+        }
+    })
+    e.target.classList.add('current-color');
+})
+
+pixels2916.addEventListener('click', (e) => {
+    clearPixels()
+    numPixels = 2916;
+    displayPixels();
+    document.querySelectorAll('.btn').forEach(btn => {
+        if (btn.classList.contains('current-color')) {
+            btn.classList.remove('current-color')
+        }
+    })
+    e.target.classList.add('current-color');
+})
+
+pixels4900.addEventListener('click', (e) => {
+    clearPixels()
+    numPixels = 4900;
+    displayPixels();
+    document.querySelectorAll('.btn').forEach(btn => {
+        if (btn.classList.contains('current-color')) {
+            btn.classList.remove('current-color')
+        }
+    })
+    e.target.classList.add('current-color');
+})
+
 sketchbook.addEventListener('mousedown', e => {
     if (e.target.classList.contains('pixel')) {
-        e.target.classList.add('blue');
+        colorPaint = $color.value;
+        e.target.style.backgroundColor = colorPaint;
         isDrawing = true;
         console.log(`isDrawing: ${isDrawing}`);
     }
@@ -30,7 +91,8 @@ sketchbook.addEventListener('mouseup', e => {
 
 sketchbook.addEventListener('mousemove', e => {
     if (isDrawing) {
-        e.target.classList.add('blue');
+        colorPaint = $color.value;
+        e.target.style.backgroundColor = colorPaint;
     }
 
     e.preventDefault();
@@ -44,15 +106,30 @@ function createPixels() {
 }
 
 function displayPixels() {
-    const div = document.createElement('div');
-    div.className = 'pixel';
     sketchbook.style.gridTemplateColumns = `repeat(${Math.sqrt(numPixels)},1fr)`
     
     for (let i=0; i < numPixels; i++) {
         createPixels();
     }
 
+    // Not every number of pixels is appropriate for this app. The formula that I used to find possible pixel numbers is: Math.sqrt(numPixels) % 2 === 0
+}
+
+function clearPixels() {
+    sketchbook.innerHTML = '';
+}
+
+function clearCanvas() {
+    const pixels = document.querySelectorAll('.pixel');
+
+    pixels.forEach(pixel => {
+        pixel.style.backgroundColor = '#fff';
+    })
 }
 
 
-displayPixels();
+// for (let i = 0; i<= 5000; i++) {
+//     if (Math.sqrt(i) % 2 === 0) {
+//         console.log(i);
+//     }
+// }
