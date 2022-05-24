@@ -2,37 +2,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    padding: 1rem 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
     background: #bdc3c7;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
 }
 
 .container {
-    max-width: 1200px;
-    height: 100%;
-    margin:0 auto;
-    padding: 0 1.5rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
     align-items: center;
+    justify-content: center;  
 }
 
 nav {
-    padding: 1rem;
     max-width: 1200px;
     text-align: center;
     margin: 0 auto;
-    color: white;
 }
 
 #sketchbook {
@@ -45,7 +38,6 @@ nav {
 }
 
 .pixel {
-    /* border: 1px solid rgb(19, 19, 19); */
     background-color: #fff;
 }
 
@@ -60,7 +52,35 @@ nav {
     gap: 1rem;
 }
 
-.controls-pixel,
+.controls-pixel {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    grid-template-areas: "pix small medium large xl";
+}
+
+.pixels {
+    text-align: center;
+    grid-area: pix;
+}
+
+#px256 {
+    grid-area: small;
+}
+
+#px1024 {
+    grid-area: medium;
+}
+
+#px2916 {
+    grid-area: large;
+}
+
+#px4900 {
+    grid-area: xl;
+}
+
 .controls-color {
     display: flex;
     justify-content: center;
@@ -75,18 +95,16 @@ nav {
 }
 
 .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
     font-size: 18px;
     font-weight: 600;
     text-decoration: none;
     color: #ffffff;
     background-color: #56bbff;
     border-radius: 10px;
-    width: 80px;
-    height: 40px;
     transition: all 200ms ease-in-out;
+    text-align: center;
 }
 
 .current-color {
@@ -110,4 +128,44 @@ nav {
 
 svg {
     cursor: pointer;
+}
+
+
+@media (max-width: 1024px) {
+    body {
+        height: 100vh;
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background: #a1b4c0;
+    }
+}
+
+@media (max-width: 620px) {
+    #sketchbook {
+        width: 100%;
+        height: 300px;
+    }
+
+    .btn {
+        padding: 0.75rem 2rem;
+    }
+
+    .controls-pixel {
+        grid-template-areas: "pix pix"
+        "small medium"
+        "large xl";
+        gap: 1.5rem;
+    }
+
+    .controls-color {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .controls-color .btn {
+        margin: 0;
+    }
 }

@@ -1,9 +1,9 @@
 // Get UI Elements
 const sketchbook =  document.getElementById('sketchbook');
-const pixels256 = document.getElementById('256px');
-const pixels1024 = document.getElementById('1024px');
-const pixels2916 = document.getElementById('2916px');
-const pixels4900 = document.getElementById('4900px');
+const pixels256 = document.getElementById('px256');
+const pixels1024 = document.getElementById('px1024');
+const pixels2916 = document.getElementById('px2916');
+const pixels4900 = document.getElementById('px4900');
 const $color = document.querySelector('input');
 const $clearBtn = document.querySelector('.clear-btn');
 
