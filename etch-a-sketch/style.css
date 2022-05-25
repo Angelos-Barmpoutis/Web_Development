@@ -5,10 +5,9 @@
 }
 
 body {
-    background: #bdc3c7;  /* fallback for old browsers */
+    background: #a1b4c0;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 100vh;
 }
@@ -55,14 +54,14 @@ nav {
 .controls-pixel {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    grid-template-areas: "pix small medium large xl";
+    grid-template-areas: "pix small medium large xl clear";
 }
 
 .pixels {
     text-align: center;
     grid-area: pix;
+    align-self: center;
 }
 
 #px256 {
@@ -81,24 +80,21 @@ nav {
     grid-area: xl;
 }
 
-.controls-color {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
 .controls-pixel p,
 .controls-color {
     font-size: 18px;
     color: #ffffff;
 }
 
+.controls-color label {
+    margin-right: 1rem;
+}
+
 .btn {
     display: inline-block;
     padding: 0.5rem 0.75rem;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
     color: #ffffff;
     background-color: #56bbff;
@@ -107,18 +103,18 @@ nav {
     text-align: center;
 }
 
+.btn:hover{
+    opacity: 0.6;
+}
+
 .current-color {
     background-color: #002239;
-    transform: scale(0.95);
+    transform: scale(0.9);
 }
 
-.controls-color .input {
-    width: 100%;
-}
-
-.controls-color .btn {
+.clear-btn {
+    grid-area: clear;
     background-color: #ff0000;
-    margin-left: 14.2rem;
 }
 
 .fa-trash-can {
@@ -155,17 +151,13 @@ svg {
     .controls-pixel {
         grid-template-areas: "pix pix"
         "small medium"
-        "large xl";
+        "large xl"
+        "clear clear";
         gap: 1.5rem;
     }
 
     .controls-color {
-        flex-direction: column;
-        gap: 1rem;
         width: 100%;
-    }
-
-    .controls-color .btn {
-        margin: 0;
+        text-align: center;
     }
 }

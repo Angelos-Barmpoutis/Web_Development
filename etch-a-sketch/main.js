@@ -126,10 +126,3 @@ function clearCanvas() {
         pixel.style.backgroundColor = '#fff';
     })
 }
-
-
-// for (let i = 0; i<= 5000; i++) {
-//     if (Math.sqrt(i) % 2 === 0) {
-//         console.log(i);
-//     }
-// }
