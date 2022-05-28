@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  background-color: #0a1929;
+  font-family: 'Mulish', sans-serif;
+  height: 100vh;
+}
+
+body .container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+body .container.panels-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95%;
+  padding: 0 2rem;
+  overflow-x: hidden;
+}
+
+body .container.panels-container .panel {
+  width: 130px;
+  height: 70%;
+  position: relative;
+  border-radius: 24px;
+  margin: 0 .75rem;
+  transition: all 1s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  body .container.panels-container .panel {
+    width: 100%;
+    flex-shrink: 0;
+    margin: 0;
+    opacity: 0;
+  }
+}
+
+body .container.panels-container .panel.active {
+  width: 85%;
+}
+
+@media screen and (max-width: 768px) {
+  body .container.panels-container .panel.active {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+body .container.panels-container .panel.active h3 {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  body .container.panels-container .panel.active h3 {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+}
+
+body .container.panels-container .panel:nth-child(1) {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../img/travel.jpg") center center/cover no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  body .container.panels-container .panel:nth-child(1) {
+    transform: translateX(200%);
+  }
+}
+
+body .container.panels-container .panel:nth-child(2) {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("..//img/fearless.jpg") center center/cover no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  body .container.panels-container .panel:nth-child(2) {
+    transform: translateX(100%);
+  }
+}
+
+body .container.panels-container .panel:nth-child(3) {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../img/breath.jpg") center center/cover no-repeat;
+}
+
+body .container.panels-container .panel:nth-child(4) {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../img/enjoy.jpg") center center/cover no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  body .container.panels-container .panel:nth-child(4) {
+    transform: translateX(-100%);
+  }
+}
+
+body .container.panels-container .panel:nth-child(5) {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../img/live.jpg") center center/cover no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  body .container.panels-container .panel:nth-child(5) {
+    transform: translateX(-200%);
+  }
+}
+
+body .container.panels-container .panel h3 {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2rem;
+  font-weight: 700;
+  max-width: 100px;
+  text-align: center;
+  letter-spacing: 1px;
+  transition: all 600ms ease-in-out;
+  opacity: 0;
+}
+
+body .container .footer {
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
