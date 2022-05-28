@@ -13,12 +13,11 @@ body {
 }
 
 body .container {
-  max-width: 1440px;
+  width: 100vw;
   margin: 0 auto;
 }
 
 body .container.panels-container {
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +37,7 @@ body .container.panels-container .panel {
 
 @media screen and (max-width: 768px) {
   body .container.panels-container .panel {
-    width: 100%;
+    width: 0;
     flex-shrink: 0;
     margin: 0;
     opacity: 0;
@@ -72,20 +71,8 @@ body .container.panels-container .panel:nth-child(1) {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../img/travel.jpg") center center/cover no-repeat;
 }
 
-@media screen and (max-width: 768px) {
-  body .container.panels-container .panel:nth-child(1) {
-    transform: translateX(200%);
-  }
-}
-
 body .container.panels-container .panel:nth-child(2) {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("..//img/fearless.jpg") center center/cover no-repeat;
-}
-
-@media screen and (max-width: 768px) {
-  body .container.panels-container .panel:nth-child(2) {
-    transform: translateX(100%);
-  }
 }
 
 body .container.panels-container .panel:nth-child(3) {
@@ -96,20 +83,8 @@ body .container.panels-container .panel:nth-child(4) {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../img/enjoy.jpg") center center/cover no-repeat;
 }
 
-@media screen and (max-width: 768px) {
-  body .container.panels-container .panel:nth-child(4) {
-    transform: translateX(-100%);
-  }
-}
-
 body .container.panels-container .panel:nth-child(5) {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../img/live.jpg") center center/cover no-repeat;
-}
-
-@media screen and (max-width: 768px) {
-  body .container.panels-container .panel:nth-child(5) {
-    transform: translateX(-200%);
-  }
 }
 
 body .container.panels-container .panel h3 {
