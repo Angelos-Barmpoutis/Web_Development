@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  background-color: #f6f7fb;
+}
+
+body .container {
+  max-width: 1280px;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body .container .progress-container {
+  width: 350px;
+  margin-bottom: 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+body .container .progress-container::before {
+  content: '';
+  height: 4px;
+  width: 100%;
+  background-color: #e0e0e0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+body .container .progress-container .progress-bar {
+  height: 4px;
+  width: 38%;
+  background-color: #3498db;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: width 400ms ease;
+}
+
+body .container .progress-container .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid #e0e0e0;
+  background-color: #fff;
+  color: #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border-color 400ms ease;
+}
+
+body .container .progress-container .circle.active {
+  border-color: #3498db;
+}
+
+body .container .btn, body .container .btn-previous, body .container .btn-next {
+  background-color: #3498db;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+body .container .btn:active, body .container .btn-previous:active, body .container .btn-next:active {
+  transform: scale(0.98);
+}
+
+body .container .btn:disabled, body .container .btn-previous:disabled, body .container .btn-next:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+/*# sourceMappingURL=main.css.map */
