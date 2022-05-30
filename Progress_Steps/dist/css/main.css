@@ -8,20 +8,28 @@
 body {
   font-family: 'Muli', sans-serif;
   background-color: #f6f7fb;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
 }
 
 body .container {
   max-width: 1280px;
-  height: 100vh;
   margin: 0 auto;
   text-align: center;
+}
+
+body .container.steps-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-body .container .progress-container {
+body .container.steps-container .progress-container {
   width: 350px;
   margin-bottom: 1.8rem;
   display: flex;
@@ -29,7 +37,13 @@ body .container .progress-container {
   position: relative;
 }
 
-body .container .progress-container::before {
+@media (max-width: 425px) {
+  body .container.steps-container .progress-container {
+    width: 250px;
+  }
+}
+
+body .container.steps-container .progress-container::before {
   content: '';
   height: 4px;
   width: 100%;
@@ -41,9 +55,9 @@ body .container .progress-container::before {
   z-index: -1;
 }
 
-body .container .progress-container .progress-bar {
+body .container.steps-container .progress-container .progress-bar {
   height: 4px;
-  width: 38%;
+  width: 0%;
   background-color: #3498db;
   position: absolute;
   top: 50%;
@@ -53,7 +67,7 @@ body .container .progress-container .progress-bar {
   transition: width 400ms ease;
 }
 
-body .container .progress-container .circle {
+body .container.steps-container .progress-container .circle {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -63,10 +77,17 @@ body .container .progress-container .circle {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: border-color 400ms ease;
+  transition: border-color 400ms ease 200ms;
 }
 
-body .container .progress-container .circle.active {
+@media (max-width: 425px) {
+  body .container.steps-container .progress-container .circle {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+body .container.steps-container .progress-container .circle.active {
   border-color: #3498db;
 }
 
@@ -88,6 +109,14 @@ body .container .btn:active, body .container .btn-previous:active, body .contain
 
 body .container .btn:disabled, body .container .btn-previous:disabled, body .container .btn-next:disabled {
   background-color: #e0e0e0;
+  color: #333;
   cursor: not-allowed;
+}
+
+body .container .footer {
+  margin-top: 10rem;
+  color: #333;
+  width: 100%;
+  font-size: 0.85rem;
 }
 /*# sourceMappingURL=main.css.map */
